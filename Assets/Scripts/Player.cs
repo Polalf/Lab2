@@ -9,6 +9,7 @@ public class Player : Singleton<Player>
     bool canAtk;
     void Start()
     {
+        Time.timeScale = 1;
         canAtk =true;
     }
 

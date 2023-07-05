@@ -314,9 +314,9 @@ MonoBehaviour:
         m_CallState: 2
   tagDamage:
   - Bullet
-  speed: 5
+  speed: 3
   cd: 1
-  bullet: {fileID: 5503601697103067107, guid: 16215ae367021dd46a38d744e2f0a23a, type: 3}
+  bullet: {fileID: 5503601697103067107, guid: 96324f1b88df365499ff3e0f4c87a715, type: 3}
   shootCtrl:
   - {fileID: 3443653816423397329}
   - {fileID: 5403358049222215733}

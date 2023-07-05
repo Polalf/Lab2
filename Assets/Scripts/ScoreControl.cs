@@ -10,6 +10,8 @@ public class ScoreControl : MonoBehaviour
     
     public TMP_Text scoreText;
     public TMP_Text highScoreText;
+
+    public bool inGame;
     void Start()
     {
         Load();
@@ -18,8 +20,17 @@ public class ScoreControl : MonoBehaviour
     
     void Update()
     {
-        scoreText.text = "Score " +score.ToString();
-        highScoreText.text ="Highscore "+  highScore.ToString();
+        if(inGame)
+        {
+            scoreText.text = "Score " + score.ToString();
+            highScoreText.text = "Highscore " + highScore.ToString();
+        }
+        else
+        {
+            highScoreText.text = highScore.ToString();
+        }
+        
+        
         if(score > highScore)
         {
             highScore = score;
@@ -27,16 +38,16 @@ public class ScoreControl : MonoBehaviour
         }
     }
 
-    void Save()
+    public void Save()
     {
-        PlayerPrefs.SetInt("Score",highScore);
+        PlayerPrefs.SetInt("HScore",highScore);
     }
 
     void Load()
     {
-        if(PlayerPrefs.HasKey("Score"))
+        if(PlayerPrefs.HasKey("HScore"))
         {
-            highScore = PlayerPrefs.GetInt("Score"); 
+            highScore = PlayerPrefs.GetInt("HScore"); 
         }
     }
 }
